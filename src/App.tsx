@@ -5,6 +5,7 @@ type Product = {
   id: string;
   title: string;
   thumbnail?: string;
+  description?: string
 };
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
   return (
     <div style={{ padding: '20px' }}>
       <Input
+        id='input'
         value={search}
         onChange={setSearch}
         placeholder="Digite o nome do produto"
@@ -35,6 +37,7 @@ export default function App() {
           <div key={product.id} style={{ border: '1px solid #ccc', padding: '10px' }}>
             <h4>{product.title}</h4>
             {product.thumbnail && <img src={product.thumbnail} alt={product.title} />}
+            <p >{product.description}</p>
           </div>
         ))}
       </div>
